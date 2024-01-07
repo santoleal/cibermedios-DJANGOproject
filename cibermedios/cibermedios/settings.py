@@ -56,7 +56,7 @@ ROOT_URLCONF = 'cibermedios.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/hijodelpueblo/Escritorio/COMPUTIN 2022/HOMEWORK/PYTHON-DJANGO/Entrega3/cibermedios/cibermedios/templates'],
+        'DIRS': ['/home/hijodelpueblo/Escritorio/COMPUTIN 2022/DESARROLLO WEB/MIS PROGRAMAS - GIT/cibermedios-DJANGOproject/cibermedios/cibermedios/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
