@@ -1,6 +1,6 @@
 # cibermedios-DJANGOproject
 
-##Proyecto de curso Python + Django
+## Proyecto de curso Python + Django
 
 ### INSTRUCCIONES PARA SU REVISIÓN
 
