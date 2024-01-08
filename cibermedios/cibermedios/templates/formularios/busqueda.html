@@ -1,0 +1,43 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block headerDinamico %}
+<div class="container position-relative">
+    <div class="row justify-content-center">
+        <div class="col-xl-6">
+            <div class="text-center text-white">
+                <!-- Page heading-->
+                <h1 class="mb-5">Respuesta de búsqueda de Cibermedios</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block contenidoDinamico %}
+
+
+    <h3>Resultado de la búsqueda de cibermedio {{ pais }}:</h3><br>
+    {% if cibermedio %}
+        <ul>
+            {% for medio in cibermedio %}
+            <li><h4>Nombre: {{ medio.nombre }}</h4></li>
+            <li><h5>País: {{ medio.pais }}</h5></li>
+            <li><h5>Dirección web: {{ medio.url }}</h5></li>
+            <li><h5>Comentarios: {{ medio.comentarios }}</h5></li>
+            <br/>
+            <br/>
+
+            {% endfor %}
+        </ul>
+
+    {% else %}
+        <h2>No se encontró ningún registro.</h2>
+
+    {% endif %}
+
+    <h3>Volver a la <a href="{% url 'busqueda-cibermedio' %}">búsqueda de Cibermedios</a></h3>
+
+{% endblock %}

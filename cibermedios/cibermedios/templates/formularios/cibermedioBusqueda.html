@@ -1,0 +1,42 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block headerDinamico %}
+<div class="container position-relative">
+    <div class="row justify-content-center">
+        <div class="col-xl-6">
+            <div class="text-center text-white">
+                <!-- Page heading-->
+                <h1 class="mb-5">Búsqueda de Cibermedios</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block contenidoDinamico %}
+
+
+    <form action="{% url 'buscar' %}" method="get"> 
+
+        {% if formulario.error %}
+         <p style="color: red;">Error con los datos (probando mensaje de error). </p>
+        {% endif %}
+
+        <table>
+            <h3><label for="pais">Buscar Cibermedio por país: </label></h3>
+            {{ formulario.as_table }}
+        </table>        
+        <!-- <input type="text" name="pais" id="pais"> -->
+        <input type="submit" value="Buscar">
+
+
+        <!-- <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <button type="submit">Enviar</button> -->
+
+    </form>
+{% endblock %}

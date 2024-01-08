@@ -2,9 +2,24 @@
 
 {% load static %}
 
+
+{% block headerDinamico %}
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">Esta es la página de Investigaciones</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
 {% block contenidoDinamico %}
 
-<h1>Esta es la página de Investigaciones</h1>
-<h2>Se hereda del padre</h2>
+    <h1>Investigaciones: </h1>
+    <h2>Se hereda del padre</h2>
 
 {% endblock %}

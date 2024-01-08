@@ -1,15 +1,25 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+
+
 # Create your models here.
 
 class Cibermedios(models.Model):
     nombre = models.CharField(max_length=200)
     pais = models.CharField(max_length=200)
     url = models.CharField(max_length=200)
-    anio_creacion = models.DateField()
+    anio_creacion = models.IntegerField(
+        validators=[MinValueValidator(1980), MaxValueValidator(2025)])
     comentario = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
-        return f"Nombre: {self.nombre} - País: {self.pais} - URL: {self.url} - Año Creación: {self.anio_creacion.year} - Comentario{self.comentario}"
+        return f"{self.nombre} / {self.pais} / {self.url}"
+
+    class Meta():
+        verbose_name = "Cibermedio"
+        verbose_name_plural = "Cibermedios"
+        ordering = ('nombre',)
 
 
 class Investigadores(models.Model):
@@ -20,8 +30,13 @@ class Investigadores(models.Model):
     # Fotografía? Cómo agregarla?
 
     def __str__(self):
-        return f"Nombre: {self.nombre} - País: {self.pais} - Bio: {self.biografia} - - Link: {self.link}"
+        return f"{self.nombre} / {self.pais}"
     
+
+    class Meta():
+        verbose_name = "Investigador/a"
+        verbose_name_plural = "Investigadores/as"
+        ordering = ("nombre",)
 
 class Investigaciones(models.Model):
     titulo = models.CharField(max_length=200)
@@ -33,6 +48,9 @@ class Investigaciones(models.Model):
     link = models.CharField(max_length=200)
 
     def __str__(self):
-        return f"Título: {self.titulo} - Autores: {self.autores} - Año de publicación: {self.anio_publicacion.year} - País de estudio: {self.pais_referencia} - Resumen: {self.resumen} - Palabras claves: {self.palabras_claves} - Link: {self.link}"
+        return f"Título: {self.titulo} / Autores: {self.autores} / Año de publicación: {self.anio_publicacion.year} "
 
-
+    class Meta():
+        verbose_name = "Investigación"
+        verbose_name_plural = "Investigaciones"
+        ordering = ("titulo",)

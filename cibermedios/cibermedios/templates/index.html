@@ -2,9 +2,20 @@
 
 {% load static %}
 
+{% block headerDinamico %}
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">Bienvenid@s al Observatorio de Cibermedios!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block contenidoDinamico %}
-
-<h1>Esta es la página de inicio</h1>
-<h2>Se hereda del padre</h2>
-
+    <h1>Inicio:</h1>
+    <h2>Se hereda del padre</h2>
 {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block headerDinamico %}
+<div class="container position-relative">
+    <div class="row justify-content-center">
+        <div class="col-xl-6">
+            <div class="text-center text-white">
+                <!-- Page heading-->
+                <h1 class="mb-5">Formulario de Cibermedios</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block contenidoDinamico %}
+
+
+    <form action="{% url 'cibermedios-formulario' %}" method="post">  {% csrf_token %}
+        <!-- <p><label for="nombre">Nombre: </label> <input type="text" name="nombre"></p>
+        <p><label for="pais">País: </label> <input type="text" name="pais"></p>
+        <p><label for="url">Dirección web: </label> <input type="text" name="url"></p>
+        <p><label for="anio_creacion">Año de creación: </label> <input type="date" name="anio_creacion"></p>
+        <p><label for="comentario">Comentario: </label> <input type="text" name="comentario"></p> -->
+
+        {% if miFormulario.error %}
+        <p style="color: red;">Error con los datos (probando mensaje de error). </p>
+        {% endif %}
+
+
+
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <button type="submit">Enviar</button>
+
+    </form>
+{% endblock %}

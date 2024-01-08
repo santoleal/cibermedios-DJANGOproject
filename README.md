@@ -22,4 +22,10 @@
   - US: "tutora"
   - CT: "coderhouse"
 
-- Hasta el momento, falta el formulario para ingresar y buscar instancias
+#### Para probar el buscador:
+
+- Sólo está habilitado el buscador para el modelo "Cibermedio"
+
+- Para ello, debe acceder a esa pestaña (opción del Menú) y seguir el hipervínculo.
+
+- Una vez realizada la consulta se verá el resultado en una vista nueva
